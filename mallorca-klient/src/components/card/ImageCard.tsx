@@ -1,58 +1,62 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { Collapse } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import React from 'react';
+// import mainTheme from '../../styles/MainTheme';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 645,
+        background: 'rgba(0,0,0,.5)',
+        margin: '2rem'
     },
     media: {
-        height: 140,
+        height: 440
     },
+    title: {
+        fontFamily: 'Nunito',
+        fontWeight: 'bold',
+        fontSize: '2rem'
+    },
+    description: {
+        fontFamily: 'Nunito',
+        fontSize: '1.1rem'
+    }
 });
 
 interface ImageCardProps {
+    checked: boolean;
     imagePath: string;
-    title: string;
+    title?: string;
     text?: string;
 }
 
-function ImageCard(props: ImageCardProps) {
+export default function ImageCard(props: ImageCardProps) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
-            <CardActionArea>
+        <Collapse
+            in={true}
+            {...({ timeout: 2000 })}
+        >
+            <Card className={classes.root}>
                 <CardMedia
                     className={classes.media}
-                    image={props.imagePath}
-                    title="Contemplative Reptile"
+                    image={process.env.PUBLIC_URL + props.imagePath}
+                    title={props.title}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
                         {props.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="p" className={classes.description}>
                         {props.text}
                     </Typography>
                 </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
-                <Button size="small" color="primary">
-                    Learn More
-                </Button>
-            </CardActions>
-        </Card>
+            </Card>
+        </Collapse>
     );
 }
-
-export default ImageCard;
