@@ -39,8 +39,10 @@ export default function ImageCard(props: ImageCardProps) {
 
     return (
         <Collapse
-            in={true}
-            {...({ timeout: 2000 })}
+            in={props.checked}
+            {...({ timeout: 1000 })}
+            collapsedHeight={0}
+
         >
             <Card className={classes.root}>
                 <CardMedia

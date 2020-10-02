@@ -4,6 +4,7 @@ import SortIcon from '@material-ui/icons/Sort';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import React, { useEffect, useState } from 'react';
 import mainTheme from '../../styles/MainTheme';
+import { Link as Scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,7 +23,10 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1
     },
     appbarUnderTitle: {
-        fontSize: '4.5rem'
+        fontSize: '4.5rem',
+        [theme.breakpoints.down('md')]: {
+            fontSize: '3rem'
+        }
     },
     appbarWrapper: {
         width: '80%',
@@ -40,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '4rem'
     },
     colorText: {
-        color: mainTheme.palette.secondary.main,
+        color: mainTheme.palette.secondary.main
     }
 }));
 
@@ -48,9 +52,9 @@ export default function Header() {
     const classes = useStyles();
     const [checked, setChecked] = useState(false);
 
-    useEffect(() =>{
+    useEffect(() => {
         setChecked(true);
-    }, [])
+    }, []);
 
     return (
         <div className={classes.root} id='header'>
@@ -63,7 +67,6 @@ export default function Header() {
                     </h1>
                     <IconButton>
                         <SortIcon className={classes.iconMenu} />
-
                     </IconButton>
                 </Toolbar>
             </AppBar>
@@ -79,9 +82,11 @@ export default function Header() {
                          Mallorca Experience.
                     </span>
                     </h1>
-                    <IconButton>
-                        <KeyboardArrowDownIcon className={classes.iconDown} />
-                    </IconButton>
+                    <Scroll to='info-deck' smooth={true}>
+                        <IconButton>
+                            <KeyboardArrowDownIcon className={classes.iconDown} />
+                        </IconButton>
+                    </Scroll>
                 </div>
             </Collapse>
         </div>

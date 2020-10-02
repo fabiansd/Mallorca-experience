@@ -15,7 +15,7 @@ export default function useWindowPosition(id: string) {
             console.log('page Y offset')
             console.log(window.pageYOffset)
 
-            if (window.pageYOffset > offsetSetHeight * 0.5) {
+            if (window.pageYOffset > offsetSetHeight * 0.7) {
                 console.log('TRUE')
                 setAnimation(true);
             }
