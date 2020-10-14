@@ -1,16 +1,16 @@
+import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ImageCard from '../../components/card/ImageCard';
+import * as text from '../../text/card.json';
+import * as title from '../../text/menuitems.json';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignitems: 'center',
-        backgroundImage: `url(${process.env.PUBLIC_URL + 'files/images/background/honeydrip.jpg'})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column'
         }
@@ -28,10 +28,29 @@ const useStyles = makeStyles((theme) => ({
 export default function ContainerThree() {
     const classes = useStyles();
     // const checked = useWindowPosition('header');
+    const [checked, setChecked] = useState(false);
+
+    useEffect(() => {
+        setChecked(true);
+    }, []);
 
     return (
-        <div className={classes.root}>
-
+        <div className={classes.root} id='container-three'>
+            <Grid
+                container
+                direction='row'
+                justify='center'
+                alignItems='center'
+            >
+                <ImageCard
+                    checked={checked}
+                    imagePath='files/images/card/bee2.jpg'
+                    title={title.menuitem3}
+                    text={text.card3intro}
+                    text1={text.card3text1}
+                    text2={text.card3text2}
+                    text3={text.card3text3} />
+            </Grid>
         </div>
     );
 }

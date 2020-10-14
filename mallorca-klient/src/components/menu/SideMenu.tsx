@@ -1,28 +1,22 @@
 import { IconButton, MenuItem } from '@material-ui/core';
 import Drawer from '@material-ui/core/Drawer';
 import { makeStyles } from '@material-ui/core/styles';
-// import { makeStyles } from '@material-ui/core/styles';
 import SortIcon from '@material-ui/icons/Sort';
 import React from 'react';
 import { Link as Scroll } from 'react-scroll';
 import mainTheme from '../../styles/MainTheme';
 
+import * as text from '../../text/menuitems.json';
+
 const useStyles = makeStyles((theme) => ({
-    root: {
-    },
+    root: {},
     iconMenu: {
-        color: mainTheme.palette.primary.main,
-        fontSize: '3rem',
-    },
-    // menu: {
-    //     backgroundColor: 'rgba(255,255,255,0.25)',
-    // },
-    drawer: {
-        // backgroundColor: 'rgba(0,0,0,0.25)',
+        color: mainTheme.palette.common.white,
+        fontSize: '3rem'
     },
     menuItems: {
         // backgroundColor: 'rgba(255,255,255,0.25)',
-        color: mainTheme.palette.primary.main,
+        color: mainTheme.palette.common.black,
         '&:focus': {
             background: 'rgba(255,255,255,0.8)'
         }
@@ -31,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
 
 const menyStyle = {
     // backgroundColor: 'rgba(255,255,255,0.25)',
-    color: mainTheme.palette.primary.main,
-}
+    color: mainTheme.palette.primary.main
+};
 
 export default function TemporaryDrawer() {
     const classes = useStyles();
@@ -59,23 +53,34 @@ export default function TemporaryDrawer() {
                 <SortIcon />
             </IconButton>
             <Drawer
-                anchor="top"
+                anchor="right"
                 open={open}
                 onClose={handleDrawerClose}
                 onClick={handleDrawerClose}
-                elevation={2}
+                elevation={3}
                 PaperProps={{
                     style: menyStyle
                 }}
             >
                 <MenuItem onClick={handleDrawerClose} className={classes.menuItems}>
+                    <Scroll to='container-one' smooth={true}>
+                        <p>
+                            {text.menuitem1}
+                        </p>
+                    </Scroll>
+                </MenuItem>
+                <MenuItem onClick={handleDrawerClose} className={classes.menuItems}>
                     <Scroll to='container-two' smooth={true}>
-                        Bien
+                        <p>
+                            {text.menuitem2}
+                        </p>
                     </Scroll>
                 </MenuItem>
                 <MenuItem onClick={handleDrawerClose} className={classes.menuItems}>
                     <Scroll to='container-four' smooth={true}>
-                        Birøkterne
+                        <p>
+                            {text.menuitem4}
+                        </p>
                     </Scroll>
                 </MenuItem>
             </Drawer>

@@ -2,10 +2,12 @@ import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React, { useEffect, useState } from 'react';
 import ImageCard from '../../components/card/ImageCard';
+import * as text from '../../text/card.json';
+import * as title from '../../text/menuitems.json';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignitems: 'center',
@@ -34,7 +36,7 @@ export default function ContainerTwo() {
     }, []);
 
     return (
-        <div className={classes.root} id="container-two">
+        <div className={classes.root} id='container-two'>
 
             <Grid
                 container
@@ -44,9 +46,13 @@ export default function ContainerTwo() {
             >
                 <ImageCard
                     checked={checked}
-                    imagePath='files/images/card/bee.jpg'
-                    title="Info One"
-                    text="This is some blank text just to show how the text would look like if we wrote something that actually made sense here. Not that i write anything that makes sense anytime anyways.." />
+                    imagePath='files/images/card/rokter.jpg'
+                    title={title.menuitem2}
+                    text={text.card2intro}
+                    text1={text.card2text1}
+                    text2={text.card2text2}
+                    text3={text.card2text3}
+                />
             </Grid>
         </div>
     );

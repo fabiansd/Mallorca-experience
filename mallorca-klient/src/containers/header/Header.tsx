@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         textAlgin: 'center',
         height: '100vh',
+        // backgroundImage: `url(${process.env.PUBLIC_URL + 'files/images/card/honning_3_sorter.jpg'})`,
+        // backgroundRepeat: 'no-repeat',
+        // backgroundSize: 'cover',
+        // backgroundPosition: 'center center',
     },
     appbarStyle: {
         background: 'none'
@@ -41,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '4rem'
     },
     colorText: {
-        color: mainTheme.palette.primary.main,
+        color: mainTheme.palette.common.white,
     },
 }));
 
@@ -58,7 +62,9 @@ export default function Header() {
             <AppBar className={classes.appbarStyle} elevation={0} position='fixed'>
                 <Toolbar className={classes.appbarWrapper}>
                     <h1 className={classes.appbarTitle}>
-                        Beecoin <span className={classes.colorText}>
+                        <span className={classes.colorText}>
+                         The
+                    </span> Beecoin <span className={classes.colorText}>
                          Experience.
                     </span>
                     </h1>
