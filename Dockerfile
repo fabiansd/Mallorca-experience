@@ -5,5 +5,6 @@ WORKDIR /app
 # move all source code
 COPY . .
 RUN npm install
-CMD [ "npm", "run", "eb:prod" ]
+RUN npm install react-scroll
+RUN npm start
 EXPOSE 8080
