@@ -31,7 +31,10 @@
     "start": "PORT=8080 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:prod": "docker build --tag beecoinimage .",
+    "start:prod": "docker run --rm -it -p 8080:8080 --name running-beecoinimage beecoinimage",
+    "stop:prod": "docker stop running-beecoinimage"
   },
   "eslintConfig": {
     "extends": "react-app"

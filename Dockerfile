@@ -6,5 +6,5 @@ WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm install react-scroll
-RUN npm start
 EXPOSE 8080
+CMD ["npm", "start"]
