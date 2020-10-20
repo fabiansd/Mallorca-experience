@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:10.20.1
 # where our app will be located in the image
 RUN mkdir -p /app
 WORKDIR /app
