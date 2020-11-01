@@ -7,4 +7,4 @@ Nettside for vår hjemmelagde honning fra Slemdal
 
 docker build . --tag beecoinimage
 
-docker run -it --rm --publish 8080:8080 --name beecoincontainer beecoinimage
+docker run -it --rm --publish 8080:80 --name beecoincontainer fabiansd/beecoinimage

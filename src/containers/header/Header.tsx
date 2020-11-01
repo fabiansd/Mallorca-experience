@@ -12,18 +12,19 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         textAlgin: 'center',
-        height: '100vh',
-        // backgroundImage: `url(${process.env.PUBLIC_URL + 'files/images/card/honning_3_sorter.jpg'})`,
-        // backgroundRepeat: 'no-repeat',
-        // backgroundSize: 'cover',
-        // backgroundPosition: 'center center',
+        height: '100vh'
     },
     appbarStyle: {
         background: 'none'
 
     },
     appbarTitle: {
-        flexGrow: 1,
+        flexGrow: 1
+    },
+    appbarTitleStyle: {
+        display: 'inline-block',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        padding: '0.4rem',
     },
     appbarUnderTitle: {
         color: mainTheme.palette.secondary.main,
@@ -45,8 +46,8 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '4rem'
     },
     colorText: {
-        color: mainTheme.palette.common.white,
-    },
+        color: mainTheme.palette.common.white
+    }
 }));
 
 export default function Header() {
@@ -62,13 +63,15 @@ export default function Header() {
             <AppBar className={classes.appbarStyle} elevation={0} position='fixed'>
                 <Toolbar className={classes.appbarWrapper}>
                     <h1 className={classes.appbarTitle}>
-                        <span className={classes.colorText}>
-                         The
-                    </span> Beecoin <span className={classes.colorText}>
-                         Experience.
-                    </span>
+                        <div className={classes.appbarTitleStyle}>
+                            <span className={classes.colorText}>
+                             The
+                        </span> Beecoin <span className={classes.colorText}>
+                             Experience.
+                        </span>
+                        </div>
                     </h1>
-                    <AppMenu/>
+                    <AppMenu />
                 </Toolbar>
             </AppBar>
 
