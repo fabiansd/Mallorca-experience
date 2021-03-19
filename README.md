@@ -1,4 +1,6 @@
 
+[![Node CI](https://github.com/fabiansd/BeecoingExperience/actions/workflows/main.yml/badge.svg)](https://github.com/fabiansd/BeecoingExperience/actions/workflows/main.yml)
+
 ## Beecoin experience
 
 Nettside for vår hjemmelagde honning fra Slemdal
