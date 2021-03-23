@@ -1,6 +1,6 @@
 import * as React from 'react';
 import AppMain from '../../../src/containers/appmain/AppMain';
-import { shallow } from '../../../src/enzyme';
+import { shallow } from '../../enzyme.setup';
 
 it("should render initial app component", () => {
 
