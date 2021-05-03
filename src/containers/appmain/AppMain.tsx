@@ -10,7 +10,7 @@ import Header from '../header/Header';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundImage: `url(${process.env.PUBLIC_URL + 'files/images/background/dark-comb.jpg'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + 'files/images/background/mallorca-background.jpg'})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 function AppMain() {
     const classes = useStyles();
     const checked = useWindowPosition('header');
-    console.log(checked)
     return (
         <ThemeProvider theme={mainTheme}>
             <div className={classes.root}>

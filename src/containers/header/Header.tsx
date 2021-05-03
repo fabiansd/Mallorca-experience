@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         height: '100vh'
     },
     appbarStyle: {
-        background: 'none'
+        background: 'none',
 
     },
     appbarTitle: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appbarTitleStyle: {
         display: 'inline-block',
-        backgroundColor: 'rgba(0,0,0,0.5)',
+        backgroundColor: 'rgba(0,0,0,0.1)',
         padding: '0.4rem',
     },
     appbarUnderTitle: {
@@ -66,7 +66,7 @@ export default function Header() {
                         <div className={classes.appbarTitleStyle}>
                             <span className={classes.colorText}>
                              The
-                        </span> Beecoin <span className={classes.colorText}>
+                        </span> Mallorca <span className={classes.colorText}>
                              Experience.
                         </span>
                         </div>
@@ -81,9 +81,9 @@ export default function Header() {
                 collapsedHeight={14}>
                 <div className={classes.container}>
                     <h1 className={classes.appbarUnderTitle}>
-                        Smak vår <br />
+                        Enjoy our <br />
                         <span className={classes.colorText}>
-                         Hjemmelagde honning
+                         Mallorca beach house
                     </span>
                     </h1>
                     <Scroll to='container-one' smooth={true}>
