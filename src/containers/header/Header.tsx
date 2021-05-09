@@ -12,41 +12,51 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         textAlgin: 'center',
-        height: '100vh'
+        height: '100vh',
     },
     appbarStyle: {
         background: 'none',
-
     },
     appbarTitle: {
-        flexGrow: 1
+        flexGrow: 1,
     },
     appbarTitleStyle: {
+        borderStyle: 'solid',
+        borderWidth: '0.2rem',
         display: 'inline-block',
-        backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: mainTheme.palette.primary.dark,
+        fontColor: mainTheme.palette.text.primary,
         padding: '0.4rem',
     },
     appbarUnderTitle: {
-        color: mainTheme.palette.secondary.main,
         fontSize: '4.5rem',
         [theme.breakpoints.down('md')]: {
             fontSize: '3rem'
-        }
+        },
+        marginRight: '2.5rem',
+        marginLeft: '2.5rem',
+        marginBottom: '0.5rem',
     },
     appbarWrapper: {
         width: '80%',
         margin: '0 auto',
-        color: mainTheme.palette.secondary.main
     },
     container: {
         textAlign: 'center'
     },
     iconDown: {
-        color: mainTheme.palette.secondary.main,
-        fontSize: '4rem'
+        color: mainTheme.palette.text.primary,
+        fontSize: '4rem',
     },
-    colorText: {
-        color: mainTheme.palette.common.white
+    colorTextPrimary: {
+        color: mainTheme.palette.text.primary,
+    },
+    colorTextSecondary: {
+        color: mainTheme.palette.text.secondary,
+    },
+    containerUnderTitle: {
+        background: mainTheme.palette.primary.dark,
+        margin: '1rem',
     }
 }));
 
@@ -64,36 +74,41 @@ export default function Header() {
                 <Toolbar className={classes.appbarWrapper}>
                     <h1 className={classes.appbarTitle}>
                         <div className={classes.appbarTitleStyle}>
-                            <span className={classes.colorText}>
+                            <span className={classes.colorTextPrimary}>
                              The
-                        </span> Mallorca <span className={classes.colorText}>
-                             Experience.
-                        </span>
+                            </span>
+                            <span className={classes.colorTextSecondary}> Mallorca </span>
+                            <span className={classes.colorTextPrimary}>
+                            Experience.
+                            </span>
                         </div>
                     </h1>
                     <AppMenu />
                 </Toolbar>
             </AppBar>
 
-            <Collapse
-                in={checked}
-                {...({ timeout: 2000 })}
-                collapsedHeight={14}>
-                <div className={classes.container}>
-                    <h1 className={classes.appbarUnderTitle}>
-                        Enjoy our <br />
-                        <span className={classes.colorText}>
-                         Mallorca beach house
-                    </span>
-                    </h1>
-                    <Scroll to='container-one' smooth={true}>
-                        <IconButton>
-                            <KeyboardArrowDownIcon className={classes.iconDown} />
-                        </IconButton>
-                    </Scroll>
-                </div>
-            </Collapse>
-
+            <div className={classes.containerUnderTitle}>
+                <Collapse
+                    in={checked}
+                    {...({ timeout: 2500 })}
+                    collapsedHeight={14}>
+                    <div className={classes.container}>
+                        <h1 className={classes.appbarUnderTitle}>
+                            <span>
+                                Enjoy our <br />
+                            </span>
+                            <span className={classes.colorTextSecondary}>
+                             Mallorca beach house
+                            </span>
+                        </h1>
+                        <Scroll to='info-bar' smooth={true}>
+                            <IconButton>
+                                <KeyboardArrowDownIcon className={classes.iconDown} />
+                            </IconButton>
+                        </Scroll>
+                    </div>
+                </Collapse>
+            </div>
         </div>
     );
 }

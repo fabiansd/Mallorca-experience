@@ -3,7 +3,7 @@ import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
 import useWindowPosition from '../../hooks/useWindowPosition';
 import mainTheme from '../../styles/MainTheme';
-import ContainerOne from '../containerone/ContainerOne';
+import InfoBar from '../infobar/InfoBar';
 import ContainerFour from '../containerfour/ContainerFour';
 import ContainerTwo from '../containertwo/ContainerTwo';
 import Header from '../header/Header';
@@ -26,7 +26,7 @@ function AppMain() {
             <div className={classes.root}>
                 <CssBaseline />
                 <Header />
-                    <ContainerOne />
+                    <InfoBar />
                     <ContainerTwo />
                     <ContainerFour />
             </div>

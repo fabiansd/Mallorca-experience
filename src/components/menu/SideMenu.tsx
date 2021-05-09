@@ -11,11 +11,10 @@ import * as text from '../../text/menuitems.json';
 const useStyles = makeStyles((theme) => ({
     root: {},
     iconMenu: {
-        color: mainTheme.palette.common.white,
+        color: mainTheme.palette.text.primary,
         fontSize: '3rem'
     },
     menuItems: {
-        // backgroundColor: 'rgba(255,255,255,0.25)',
         color: mainTheme.palette.common.black,
         '&:focus': {
             background: 'rgba(255,255,255,0.8)'
@@ -24,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const menyStyle = {
-    // backgroundColor: 'rgba(255,255,255,0.25)',
     color: mainTheme.palette.primary.main
 };
 
@@ -53,7 +51,7 @@ export default function TemporaryDrawer() {
                 <SortIcon />
             </IconButton>
             <Drawer
-                anchor="right"
+                anchor="top"
                 open={open}
                 onClose={handleDrawerClose}
                 onClick={handleDrawerClose}
@@ -87,31 +85,3 @@ export default function TemporaryDrawer() {
         </div>
     );
 }
-
-// return (
-//         <div className={classes.root}>
-//                 <IconButton onClick={handleClick} aria-controls="long-menu" id='menu'>
-//                     <SortIcon className={classes.iconMenu} />
-//                 </IconButton>
-//                 <Drawer
-//                     anchor='right'
-//                     onClick={handleClose}
-//                     open={Boolean(anchorEl)}
-//                     onClose={handleClose}>
-//                     <div className={classes.menuItems}>
-//                         <MenuItem onClick={handleClose}>
-//                             <Scroll to='house-deck' smooth={true}>
-//                                 The Beach House
-//                             </Scroll>
-//                         </MenuItem>
-//                         <MenuItem onClick={handleClose}>
-//                             <Scroll to='experiences-deck' smooth={true}>
-//                                 Experiences
-//                             </Scroll>
-//                         </MenuItem>
-//                         <MenuItem onClick={handleClose}>My account</MenuItem>
-//                         <MenuItem onClick={handleClose}>Logout</MenuItem>
-//                     </div>
-//                 </Drawer>
-//         </div>);
-// }

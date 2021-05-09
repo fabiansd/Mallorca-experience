@@ -4,21 +4,22 @@ const mainTheme = createMuiTheme({
     palette: {
         primary: {
             main: '#f7f7f7',
+            dark: 'rgba(0,0,0,0.2)',
         },
         secondary: {
-            main: 'rgba(255,171,7,0.95)',
-            light: 'rgba(250,232,215,0.39)',
-            dark: 'rgba(255,171,7,0.95)',
+            main: 'rgba(247,247,247,0.95)',
+            light: 'rgba(247,247,247,1)',
+            dark: 'rgb(188,188,188)',
 
         },
         text: {
-            primary: 'rgb(221,140,60)',
-            secondary: 'rgba(255,255,255,0.9)',
-            disabled: 'rgba(255,255,255,0.4)'
+            primary: '#f5f5f5',
+            secondary: '#cf923f',
+            disabled: '#706350'
         }
     },
     typography: {
-      fontFamily: 'Nunito',
+        fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
     },
     overrides: {
         MuiMenuItem: {
